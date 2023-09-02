@@ -2,18 +2,7 @@
  
 
 PIN_NUM=18 
-GPIO_PATH="/sys/class/gpio" 
-
- 
-
-# Configurar el pin como salida si no está configurado previamente 
-
-configurar(){
-    sudo echo "$PIN_NUM" > "$GPIO_PATH/export" 
-    sudo echo "out" > "$GPIO_PATH/gpio$PIN_NUM/direction" 
-}
-
- 
+GPIO_PATH="/sys/class/gpio"  
  
 
 apagar_pin() { 
@@ -30,10 +19,7 @@ encender_pin() {
 
 } 
 
- 
 
-
-#configurar
 while true; do 
 
     encender_pin 
